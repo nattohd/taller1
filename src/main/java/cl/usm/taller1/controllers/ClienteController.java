@@ -19,7 +19,14 @@ public class ClienteController {
     private ClienteService clienteService;
     @PostMapping("/ingresarCliente")
     public ResponseEntity<Cliente> create(@RequestBody Cliente cliente){
-        if(!ClienteUtil.esRutValido(cliente.getRut())||!!ClienteUtil.isValidEstado(cliente.getEstado())) {
+        if(!ClienteUtil.isRutValido(cliente.getRut())||
+            !ClienteUtil.isValidEstado(cliente.getEstado())||
+         cliente.getNombre() == null ||
+        cliente.getApellidos() == null ||
+        cliente.getRut() == null||
+                cliente.getNombre().isEmpty() ||
+                cliente.getApellidos().isEmpty() ||
+                cliente.getRut().isEmpty() ) {
             return ResponseEntity.badRequest().build();
         }
         try{

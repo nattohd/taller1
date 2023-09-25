@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ClienteUtil{
-        public static boolean esRutValido(String rut){
+        public static boolean isRutValido(String rut){
             Pattern pattern = Pattern.compile("^[0-9]+-[0-9kK]{1}$");
             Matcher matcher = pattern.matcher(rut);
             if (!matcher.matches()) {
