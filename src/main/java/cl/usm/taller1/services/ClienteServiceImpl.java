@@ -6,6 +6,7 @@ import cl.usm.taller1.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClienteServiceImpl implements  ClienteService{
@@ -23,6 +24,6 @@ public class ClienteServiceImpl implements  ClienteService{
 
     @Override
     public List<Cliente> filter(String estado) {
-        return null;
+        return clienteRepository.filter(estado);
     }
 }

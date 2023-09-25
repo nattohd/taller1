@@ -1,5 +1,7 @@
 package cl.usm.taller1.utils;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,5 +21,9 @@ public class ClienteUtil{
                 S = (S + T % 10 * (9 - M++ % 6)) % 11;
             }
             return (S > 0) ? String.valueOf(S - 1) : "k";
+        }
+        public static boolean isValidEstado(String estado) {
+            List<String> valoresValidos = Arrays.asList("Habilitado", "ConDeuda", "EnListaNegra");
+            return valoresValidos.contains(estado);
         }
 }

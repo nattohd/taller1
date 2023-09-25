@@ -12,7 +12,6 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Getter
 @ToString
 public class Cliente {
-
     @MongoId
     private String id;
     private String nombre;
@@ -20,6 +19,4 @@ public class Cliente {
     private String rut;
     private int numSerie;
     private String estado;
-
-
 }
